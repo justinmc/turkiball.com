@@ -1,0 +1,43 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"																					
+"http://www.w3.org/TR/html4/loose.dtd">																												<!-- Tells browser what type of html this site uses -->
+
+<html>
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">																			<!-- What type of content -->
+
+<title> Update turkiball.com </title>																																	<!-- Text that shows up on tab in browser -->
+
+</head>																									
+
+<body>
+
+<h1>Add Player</h1>
+<p>
+Please enter the player's info below.  Note that the date must be entered in
+the correct format!
+</p>
+<form method = "post" action = "contact.php">
+Name<br>
+<input type = "text" name = "name"><br><br>
+Team (enter "none" if no team yet)<br>
+<input type = "text" name = "team" value = "none"><br><br>
+Status<br>
+None<input type = "radio" value = "none" name = "status" checked>
+&nbsp;&nbsp;Member<input type = "radio" value = "member" name = "status">
+&nbsp;&nbsp;Leader<input type = "radio" value = "leader" name = "status"><br><br>
+Date for Member Since field (dd/mm/yy)<br>
+<input type = "text" name = "date"><br><br>
+Goals (if has already played)<br>
+<input type = "text" name = "goals" value = "0"><br><br>
+<br>
+<input type = "submit" value = "Go">
+<br><br><br><br><br><br>
+<a href = "../index.html">Return to Update Home</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href = "logout.php">Logout</a>
+</form>
+
+</body>
+
+</html>

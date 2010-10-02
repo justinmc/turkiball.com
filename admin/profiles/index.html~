@@ -1,0 +1,30 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"																					
+"http://www.w3.org/TR/html4/loose.dtd">																												<!-- Tells browser what type of html this site uses -->
+
+<html>
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">																			<!-- What type of content -->
+
+<title> Update turkiball.com </title>																																	<!-- Text that shows up on tab in browser -->
+
+</head>																									
+
+<body>
+
+<h1>Edit Guardian Sports Member Profiles</h1>
+<p>
+Which member's profile do you want to edit?
+</p>
+
+
+
+<br><br><br><br><br><br>
+<a href = "logout.php">Logout</a>
+<a href = "../index.html">Return to Update Home</a>
+</form>
+
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+
+
+
+
+
+
+function clearField(input)
+{
+   if (input.value == input.defaultValue)
+   {  input.value = ""
+   }
+ 
+}
+
+function fillField(input, word)
+{
+   if (input.value == "")
+   {  input.value = "word"
+   }
+ 
+}

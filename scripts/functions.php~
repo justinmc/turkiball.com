@@ -1,0 +1,139 @@
+<?php 
+
+// This file contains all of the functions used by the php in other files around the site, besides the echoing Master functions.
+// Data abstraction = awesome.
+      
+// Database Data //
+
+$server = "db44.pair.com";
+$username = "arcoiris_2";
+$password = "r66irBhM";
+$db = "arcoiris_pages"
+$tableP = "newsEnglish";																								// Player Stats Table
+$tableT = "newsEnglish";																								// Team Stats Table
+$tableN = "newsEnglish";																								// News Table
+
+// Functions //
+
+function getdb ($index, $table)																								// Accesses the database, given table at given row
+{
+   $con = mysql_connect($server, $username, $password);
+   if (!$con)
+   {
+      die('Could not connect: ' . mysql_error());
+   }
+   mysql_select_db($db);
+   
+   $QUERY = mysql_query("SELECT * FROM $table WHERE Index = '$index'");
+   $DATA = mysql_fetch_array($QUERY);
+
+   mysql_close($con);
+   
+   return ($DATA);
+}
+      
+function getname ($filename)																						// Returns the filename, minus any directory stuff and minus the extension
+{
+   $pos = strlen($filename);
+      
+   $pos = $pos - 4;																					// Get past .php
+   $end = $pos;
+      
+   while (substr($filename, $pos, 1) != "/")
+   {  $pos--;
+   }
+   $pos++;																								// Jump back on other side of the slash
+      
+   $filename = substr($filename, $pos, ($end - $pos));
+      
+   return ($filename); 
+}           
+
+function getrows ($table)																																// Returns the total number of rows in the given table
+{
+   $con = mysql_connect($server, $username, $password);
+   if (!$con)
+   {
+      die('Could not connect: ' . mysql_error());
+   }
+   mysql_select_db($db);
+      
+   $QUERY = mysql_query("SELECT * FROM $table");
+   
+   $rows = 0;
+   $rows = mysql_num_rows($QUERY);
+
+   mysql_close($con);
+   
+   return ($rows);
+}
+
+function removehtml($text)																																// Removes all html tags from the input
+{																																								// Used for the newsbar, where we don't want big headings, etc.
+   $text = "&nbsp;" . $text;																			// Prevents the whole html at first character returning a 0 problem.   
+   $gow = 1;
+   while ($gow)
+   {
+      $gof = 1;   
+      $here = strpos($text, "<");
+      if (!$here)
+      {  $gow = 0;
+         $gof = 0;
+      }
+      for ($i = $here; (($gof) && ($i < strlen($text))); $i++)
+      {
+         if (substr($text, $i, 1) == '>')
+         {
+            $text = substr($text, 0, $here) . substr($text, ($i + 1), strlen($text));
+            $gof = 0;
+         }
+         else
+         {  $gof = 1;
+         }
+      }
+   }
+   return($text);
+}
+
+function getprev ($row)																																			// Returns the number for nav of the next oldest news item
+{   																																									// 0 means that the given row is the oldest, no prev
+   $prev = $row - 1;
+
+   return ($prev);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+?>

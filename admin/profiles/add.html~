@@ -1,0 +1,37 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"																					
+"http://www.w3.org/TR/html4/loose.dtd">																												<!-- Tells browser what type of html this site uses -->
+
+<html>
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">																			<!-- What type of content -->
+
+<title> Update turkiball.com </title>																																	<!-- Text that shows up on tab in browser -->
+
+</head>																									
+
+<body>
+
+<h1>Add News Item</h1>
+<p>
+Please enter your news entry below.  Note that the date must be entered in
+the correct format!
+</p>
+<form method = "post" action = "contact.php">
+Title<br>
+<input type = "text" name = "Title"><br><br>
+Date (dd/mm/yy)<br>
+<input type = "text" name = "date"><br><br>
+Entry<br>
+<textarea value = "entry">To be replaced by FCKeditor</textarea><br>
+<br>
+<input type = "submit" value = "Go">
+<br><br><br><br>
+<a href = "logout.php">Logout</a>
+<a href = "../index.html">Return to Update Home</a>
+</form>
+
+</body>
+
+</html>

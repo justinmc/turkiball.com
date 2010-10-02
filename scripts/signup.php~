@@ -1,0 +1,14 @@
+<?php
+  $email = $_REQUEST['email'] ;
+  $name = $_REQUEST['name'] ;
+  $notes = $_REQUEST['notes'] ;
+
+  mail( "contact@turkiball.com", "League Sign-Up From: $name",
+    "Somebody submitted the following data using the league signup form at turkiball.com/league.  Take care of it.\n\n
+     Name: $nombre\n\n
+     Email: $email\n\n
+     Notes: $comentario\n\n ", "From: $email" );
+	 
+  header( "Location: http://www.turkiball.com/league/thankyou.html" );
+
+?>
